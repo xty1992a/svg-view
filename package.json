@@ -1,0 +1,18 @@
+{
+  "name": "@redbuck/svg-view",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "svgv": "view_icon.js"
+  },
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^10.2.6",
+    "minimist": "^1.2.8",
+    "open": "8.4.2"
+  }
+}
