@@ -8,7 +8,9 @@ const open = require('open');
 const {execSync} = require('child_process');
 const argv = require('minimist')(process.argv.slice(2), {
     string: ['port', 'dir'],
+    boolean: ['help'],
     alias: {
+        help: 'h',
         port: 'p',
         dir: 'd'
     }
@@ -16,6 +18,16 @@ const argv = require('minimist')(process.argv.slice(2), {
 
 
 async function main() {
+
+    if (argv.help) {
+        console.log()
+        console.log('      ','-d --dir  [/to/path] folder includes svg files [default cwd]')
+        console.log('      ','-p --port [3000]     server port [default 3000]')
+        console.log()
+        process.exit(0)
+        return
+    }
+
     const hostname = '127.0.0.1'
     const port = argv.port || 3000
     const dir = argv.dir || process.cwd()
